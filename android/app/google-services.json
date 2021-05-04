@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1082739718009",
+    "project_id": "flash-chat-8eed5",
+    "storage_bucket": "flash-chat-8eed5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082739718009:android:768b11c5cd6bfdd61961a8",
+        "android_client_info": {
+          "package_name": "co.Deymos.flash_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1082739718009-aq74mej7781qnkfuai178eou0dfn7071.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOEZ5myRLjvwFrGDWCZzO69nH4ixjwdBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1082739718009-aq74mej7781qnkfuai178eou0dfn7071.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
