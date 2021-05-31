@@ -1,13 +1,10 @@
-
 import 'package:flash_chat/constants.dart';
+import 'package:flash_chat/models/user.dart';
 import 'package:flash_chat/screens/chat_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flash_chat/components/rounded_botton.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
-
-
 
 class RegistrationScreen extends StatefulWidget {
   static const String id = 'RegistrationScreen';
@@ -17,9 +14,9 @@ class RegistrationScreen extends StatefulWidget {
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
   bool _spinner = false;
-  final _auth = FirebaseAuth.instance;
   String email;
   String password;
+  ChatUser user = ChatUser();
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +49,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   setState(() {
                     email = value;
                   });
-
                 },
                 decoration:
                     kTextFieldDecoration.copyWith(hintText: 'Enter your email'),
@@ -82,9 +78,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       _spinner = true;
                     });
                     try {
-                      final newUser = await _auth.createUserWithEmailAndPassword(
-                          email: email, password: password);
-                      if(newUser !=null){
+                      user.registerNewUser(email, password);
+                      if (user != null) {
                         Navigator.pushNamed(context, ChatScreen.id);
                       }
                       setState(() {
@@ -96,7 +91,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   }),
             ],
           ),
-
         ),
       ),
     );
